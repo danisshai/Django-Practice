@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'onlinecourse/course.css' %}">
+</head>
+<body>
+<!--- Add a registration form here  --->
+<form action="{% url 'onlinecourse:registration' %}" method="post">
+    <div class="container">
+      <h1>Sign Up</h1>
+      <hr>
+      <!-- HINT, added inputs for username, firstname, lastname, and password  -->
+      <div>
+          {% csrf_token %}
+        <h1>Registration</h1>
+        <label for="username"><b>User Name</b></label>
+        <input type="text" placeholder="Enter User Name: " name="username" required>
+        <label for="Email"><b>Email</b></label>
+        <input type="text" placeholder="Enter User Email: " name="Email" required>
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password: " name="psw" required>
+        <!-- <label for="psw2"><b>Password confirmation</b></label>
+        <input type="password" placeholder="Enter Password: " name="psw2" required> -->
+          <button class="button" type="submit">Sign Up</button>
+      </div>
+    </div>
+  </form>
+</body>
